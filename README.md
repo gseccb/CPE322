@@ -1,4 +1,4 @@
-# CPE322 \n
+# CPE322 
 **Bolded text**
 *Italicized text*
 ~~strike through~~
