@@ -1,0 +1,24 @@
+Being in the python class with Professor Ryan I already had python and anaconda which I used to do this lab downloaded.
+I had some issues with the instalation of the packages, but figured out that that had to do with the commands so I ended up resolving that.
+then I ran into an issue with the code itself, in variable = sys.argv[1] saying that was out of bounds. This was the case in sun, coordinates, and address.
+If I change that 1 to zero, it hits me with unrecognized name in sun, Geocoder timeouts ReadTimeoutError, MaxRetryError, ConnectionError and GeocoderUnavailable in coordinates, and 2 ValueErrors in address
+CPU runs fine and identifies my 8 cores and utitilization as well as logging i log and phy
+Battery runs none, I assume this is because I'm on a desktop pc
+Theres the same issue as line 3 in document stats, but after changing 1 to zero it works, but it says that blank exists 23 times, word 5, def 4, wordcount 4, I am now realizing that's why there was extra after on the slides
+These are analysing themselves unless given an input
+This has led to proper results, 
+
+Information for New York/USA
+
+Timezone: US/Eastern
+Latitude: 40.72; Longitude: -74.00
+
+Dawn:    2023-04-07 06:01:58.877179-04:00
+Sunrise: 2023-04-07 06:30:22.266410-04:00
+Noon:    2023-04-07 12:58:19-04:00
+Sunset:  2023-04-07 19:26:35.552111-04:00
+Dusk:    2023-04-07 19:55:03.954094-04:00
+
+coordinates still lets out a lot of errors, but it did recognize the library, just guessing something is up with the connection same with address
+document stats now makes more sense
+Top Ten Words: [('our', 26), ('their', 20), ('has', 20), ('he', 19), ('them', 15), ('these', 13), ('have', 11), ('we', 11), ('us', 11), ('people', 10)]
