@@ -172,3 +172,5 @@ http.createServer(function (req, res) {
 Uncaught ReferenceError: __dirname is not defined
 
 This isn't doing anything either
+
+I also was struggling to get pystache going, I downloaded the repo, but none of the implementation things or imports in the python code worked
