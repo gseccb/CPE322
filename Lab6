@@ -1,0 +1,173 @@
+> .load C:\Users\thegs\iot\lesson6\hello-world.js
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+      res.end('Hello, World!\n');
+      });
+
+      server.listen(port, hostname, () => {
+        console.log(`Server running at http://${hostname}:${port}/`);
+        });
+
+Server {
+  maxHeaderSize: undefined,
+  insecureHTTPParser: undefined,
+  requestTimeout: 300000,
+  headersTimeout: 60000,
+  keepAliveTimeout: 5000,
+  connectionsCheckingInterval: 30000,
+  joinDuplicateHeaders: undefined,
+  _events: [Object: null prototype] {
+    request: [Function (anonymous)],
+    connection: [Function: connectionListener],
+    listening: [Function: bound onceWrapper] { listener: [Function (anonymous)] }
+  },
+  _eventsCount: 3,
+  _maxListeners: undefined,
+  _connections: 0,
+  _handle: null,
+  _usingWorkers: false,
+  _workers: [],
+  _unref: false,
+  allowHalfOpen: true,
+  pauseOnConnect: false,
+  noDelay: true,
+  keepAlive: false,
+  keepAliveInitialDelay: 0,
+  httpAllowHalfOpen: false,
+  timeout: 0,
+  maxHeadersCount: null,
+  maxRequestsPerSocket: 0,
+  [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+  [Symbol(ServerResponse)]: [Function: ServerResponse],
+  [Symbol(kCapture)]: false,
+  [Symbol(async_id_symbol)]: -1,
+  [Symbol(http.server.connections)]: ConnectionsList {},
+  [Symbol(http.server.connectionsCheckingInterval)]: Timeout {
+    _idleTimeout: 30000,
+    _idlePrev: [TimersList],
+    _idleNext: [TimersList],
+    _idleStart: 61452,
+    _onTimeout: [Function: bound checkConnections],
+    _timerArgs: undefined,
+    _repeat: 30000,
+    _destroyed: false,
+    [Symbol(refed)]: false,
+    [Symbol(kHasPrimitive)]: false,
+    [Symbol(asyncId)]: 519,
+    [Symbol(triggerId)]: 5
+  },
+  [Symbol(kUniqueHeaders)]: null
+}
+> Server running at http://127.0.0.1:3000/
+
+https://media.discordapp.net/attachments/738158285257048296/1103703151871283342/image.png?width=960&height=516
+
+> .load C:\Users\thegs\iot\lesson6\hello.js
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
+var url = require('url');
+var favicon = path.join(__dirname, 'static', 'favicon.ico');
+
+http.createServer(function (req, res) {
+                  var pathname = url.parse(req.url).pathname;
+                                    if (req.method === 'GET' && pathname === '/favicon.ico') {
+                                                        res.setHeader('Content-Type', 'image/x-icon');
+
+                                                                            fs.createReadStream(favicon).pipe(res);
+                                                                                                return;
+                                                                                                                  }
+                                                                                                                                    req.on('end', function () {
+                                                                                                                                                             console.log('request end event fired');
+
+                                                                                });
+                                                                                                                                                                                                        res.writeHead(200, {'Content-Type': 'text/plain'});
+                                                                                                      
+              res.end('Hello World!\n');
+
+
+                                console.log('response end call done');
+
+
+                                                  }).listen(8080);
+
+
+
+                                                                                                                                                                                                                                                              console.log('Server running at http://127.0.0.1:8080/');
+
+
+
+Uncaught SyntaxError: Identifier 'http' has already been declared
+
+yeah this one doesn't work, the link it creates doesn't load
+
+> .load C:\Users\thegs\iot\lesson6\http.js
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
+var url = require('url');
+var favicon = path.join(__dirname, 'static', 'favicon.ico');
+
+http.createServer(function (req, res) {
+                  var pathname = url.parse(req.url).pathname;
+                                    if (req.method === 'GET' && pathname === '/favicon.ico') {
+                                                        res.setHeader('Content-Type', 'image/x-icon');
+                                                                            fs.createReadStream(favicon).pipe(res);
+                                                                                                return;
+                                                                                                                  }
+
+            fs.readFile("test.txt", 'utf-8', function (error, data) {
+
+                                          console.log(data);
+
+                                                                        res.writeHead(200, {
+                                                                                                                                                                                                                                            'Content-Type': 'text/plain'
+                                                                                                                        
+                                        });
+
+
+                                                                      if(!data){
+
+
+                                                                                                    var data = 0;
+                                                                                                                                                                                                                                                
+          }
+
+
+
+                                        data = (parseInt(data) + 1);
+
+
+
+                                                                      var refresh = parseInt(data);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            fs.writeFile('test.txt', parseInt(refresh).toString(), (error) => { /* handle error */ });
+                                                                                                                                                                                                                                                                                                                                                                        
+          res.end('This page was refreshed ' + data + ' times!');
+
+
+
+
+                                        var data = "";
+
+
+
+
+                                                                      });
+
+
+
+
+                                                                                        }).listen(8080);
+
+
+
+
+
+Uncaught ReferenceError: __dirname is not defined
+
