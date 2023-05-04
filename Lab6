@@ -173,6 +173,8 @@ Uncaught ReferenceError: __dirname is not defined
 
 This isn't doing anything either
 
+Running this in Spyder
+
 Hi Alexa!
 Hello, World!
 
