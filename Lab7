@@ -1,0 +1,64 @@
+Running thingspeak_cpu_loop.py
+16.8
+15251.37109375
+Thu, 04 May 2023 17:41:54
+400 Bad Request
+
+Tried the other one too to similar results
+
+thingspeak_feed.py', wdir='C:/Users/thegs/iot/lesson7')
+
+An API key savefile was not found. Enter Write API Key >>> 5
+
+Should we save this key for future use? [y/N] >>> N
+20.5
+15240.5234375
+Thu, 04 May 2023 17:43:52
+400 Bad Request
+22.6
+15363.94140625
+Thu, 04 May 2023 17:44:52
+400 Bad Request
+19.7
+15319.67578125
+Thu, 04 May 2023 17:45:53
+400 Bad Request
+20.2
+15230.69921875
+Thu, 04 May 2023 17:46:53
+400 Bad Request
+24.2
+15367.14453125
+Thu, 04 May 2023 17:47:53
+400 Bad Request
+19.3
+15429.54296875
+Thu, 04 May 2023 17:48:53
+400 Bad Request
+16.7
+15409.75
+Thu, 04 May 2023 17:49:53
+400 Bad Request
+25.5
+14876.03515625
+Thu, 04 May 2023 17:50:53
+400 Bad Request
+20.8
+14788.7421875
+Thu, 04 May 2023 17:51:53
+400 Bad Request
+21.3
+14886.5078125
+Thu, 04 May 2023 17:52:53
+400 Bad Request
+20.1
+14761.125
+Thu, 04 May 2023 17:53:53
+400 Bad Request
+18.9
+14666.58984375
+Thu, 04 May 2023 17:54:53
+400 Bad Request
+Traceback (most recent call last):
+
+Same stuff as the last one, installing isn't really working like that
