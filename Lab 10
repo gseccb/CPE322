@@ -1,0 +1,176 @@
+I tried a bunch of things, I'm not quite sure what's going on with the installing things so I'll move on to this
+
+PS C:\Users\thegs\iot\lesson10> cat hash_value.py
+"""
+https://docs.python.org/3/using/cmdline.html#envvar-PYTHONHASHSEED
+If PYTHONHASHSEED is not set or set to random, a random value is used to to seed the hashes of str and bytes objects.
+If PYTHONHASHSEED is set to an integer value, it is used as a fixed seed for generating the hash() of the types covered by the hash randomization.
+Its purpose is to allow repeatable hashing, such as for selftests for the interpreter itself, or to allow a cluster of python processes to share hash values.
+The integer must be a decimal number in the range [0,4294967295]. Specifying the value 0 will disable hash randomization.
+
+https://www.programiz.com/python-programming/methods/built-in/hash
+hash(object) returns the hash value of the object (if it has one). Hash values are integers.
+They are used to quickly compare dictionary keys during a dictionary lookup.
+Numeric values that compare equal have the same hash value even if they are of different types, as is the case for 1 and 1.0.
+For objects with custom __hash__() methods, note that hash() truncates the return value based on the bit width of the host machine.
+"""
+
+# hash for integer unchanged
+print('The hash for 1 is:', hash(1))
+
+# hash for decimal
+print('The hash for 1.0 is:',hash(1.0))
+print('The hash for 3.14 is:',hash(3.14))
+
+# hash for string
+print('The hash for Python is:', hash('Python'))
+
+# hash for a tuple of vowels
+vowels = ('a', 'e', 'i', 'o', 'u')
+print('The hash for a tuple of vowels is:', hash(vowels))
+
+# hash for a custom object
+class Person:
+    def __init__(self, age, name):
+        self.age = age
+        self.name = name
+    def __eq__(self, other):
+        return self.age == other.age and self.name == other.name
+    def __hash__(self):
+        return hash((self.age, self.name))
+person = Person(23, 'Adam')
+print('The hash for an object of person is:', hash(person))
+
+That's what happens with cat, 
+
+runfile('C:/Users/thegs/iot/lesson10/hash_value.py', wdir='C:/Users/thegs/iot/lesson10')
+The hash for 1 is: 1
+The hash for 1.0 is: 1
+The hash for 3.14 is: 322818021289917443
+The hash for Python is: -8091667643312900261
+The hash for a tuple of vowels is: -1245186707669178581
+The hash for an object of person is: -3639882859155871399
+
+runfile('C:/Users/thegs/iot/lesson10/hash_value.py', wdir='C:/Users/thegs/iot/lesson10')
+The hash for 1 is: 1
+The hash for 1.0 is: 1
+The hash for 3.14 is: 322818021289917443
+The hash for Python is: -8091667643312900261
+The hash for a tuple of vowels is: -1245186707669178581
+The hash for an object of person is: -3639882859155871399
+
+Got that twice from running it in spyder
+
+>>> import hashlib
+>>> m= hashlib.sha256(b"hello, world")
+>>> m.hexdigest()
+'09ca7e4eaa6e8ae9c7d261167129184883644d07dfba7cbfbc4c8a2e08360d5b'
+>>> m.digest_size
+32
+>>> m.block_size
+64
+
+Block #1 has been added to the blockchain!
+Hash: 67306239f2b92c7ed52972a88a04849a00768cdbed41bd87a760012aeab36e64
+
+Block #2 has been added to the blockchain!
+Hash: d735ac685f612ea405c9b1d45702203b082e356249f8d3418268f8da4c927648
+
+Block #3 has been added to the blockchain!
+Hash: a659711c97a1115470d73ba28df021860295d9671d418bd7a7b08cda227e5bf1
+
+Block #4 has been added to the blockchain!
+Hash: 9619cdb4447f0030ae59e44e40e3083a819003da235a616b734b3a06e9c658e7
+
+Block #5 has been added to the blockchain!
+Hash: ff5b71bb13b581afa53989d132f6872bbf2f969df76917ba696cbbe68b7bcbad
+
+Block #6 has been added to the blockchain!
+Hash: 3666e2ff342eda3528645dd7cbebb812e94ece9830a0662ee80c02f8a7414a2a
+
+Block #7 has been added to the blockchain!
+Hash: 222b4454fb0dadc6d3aa156f7294eb10377bab0c90fc85833d6be249755748d3
+
+Block #8 has been added to the blockchain!
+Hash: 2624da88b4e8c98109ebaf0d5615318f799b7ded4ce7bc8076fdcf1e3ac9ade4
+
+Block #9 has been added to the blockchain!
+Hash: 73ab0cbe11fe4716e8cd0b1ee9beded2426a3f71db22179d80da0acf33dd2f49
+
+Block #10 has been added to the blockchain!
+Hash: 79be7a7a663d3602a66cb454fed660e57d15b652519fd0c174c51487f38de65a
+
+Block #11 has been added to the blockchain!
+Hash: e2b634023a5e943c27dbdfa91d2d9b45a5b8e187861d1b446b954d6bc57a8e26
+
+Block #12 has been added to the blockchain!
+Hash: 4d6ca30c684f7d4cdb214b4847de94baa9200f929bc87fc4e04294e0c1617db2
+
+Block #13 has been added to the blockchain!
+Hash: 916af3d14c0bc04f7ecc27ff4122da6d2471a44480e192dbe3e338aee6ac829a
+
+Block #14 has been added to the blockchain!
+Hash: 70e3b8666029fc2ffa367558ce08c1125419fa0f50a0b6da9b9688ba1b839d5d
+
+Block #15 has been added to the blockchain!
+Hash: 613931425db6f425d0956288014edb84aeee0ede6b9724239d7e0455be516900
+
+Block #16 has been added to the blockchain!
+Hash: a32cbfa9d263ff7248c133853bac8aca3b5e7a065a78787628c1afcea84697c7
+
+Block #17 has been added to the blockchain!
+Hash: 7e93c8df7d3baff51cc9e7f428bcfd2a920b7dfe47c40a84ba4e897b68db0f81
+
+Block #18 has been added to the blockchain!
+Hash: 9f8d3bd7641bdf3f4d964792e50ddef0331b0a7a4813fdbc66944c2ad8652535
+
+Block #19 has been added to the blockchain!
+Hash: 7ea73beb28a6f82f963dc8ac16cb2b2e6bbb086faac16b5800df7ce5fd983b19
+
+Block #20 has been added to the blockchain!
+Hash: f4897b638b97d9595b746648154f6694362f8ba8972a6d4252884c9d6a0d1697
+
+Terminal 1:
+ * Serving Flask app "snakecoin-server-full-code" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ 
+ Terminal 2:
+ curl "localhost:5000/txion" \
+     -H "Content-Type: application/json" \
+     -d '{"from": "akjflw", "to":"fjlakdj", "amount": 3}'
+ curl localhost:5000/mine
+curl: (7) Failed to connect to localhost port 5000 after 0 ms: Connection refused
+curl: (7) Failed to connect to localhost port 5000 after 0 ms: Connection refuse
+
+Terminal 1:
+127.0.0.1 - - [05/May/2023 00:21:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2023 00:21:56] "GET /favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2023 00:22:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2023 00:22:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2023 00:22:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2023 00:22:19] "GET / HTTP/1.1" 200 -
+which are direct results of me going to the site and refreshing
+
+
+
+Terminal 1:
+ * Serving Flask app "node_server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with watchdog (windowsapi)
+ * Restarting with watchdog (windowsapi)
+ * Restarting with watchdog (windowsapi)
+ 
+Terminal 2:
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with watchdog (windowsapi)
